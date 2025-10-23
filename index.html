@@ -1,1 +1,1925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Greek | English-Greek Language Learning</title>
+    <style>
+        :root {
+            --primary-color: #0d5c91;
+            --secondary-color: #f8b500;
+            --light-color: #f4f4f4;
+            --dark-color: #333;
+            --success-color: #28a745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0.8rem;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover, 
+        nav ul li a.active {
+            background-color: rgba(255,255,255,0.2);
+            color: var(--secondary-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: url('https://raw.githubusercontent.com/KarinaR-Ch/Greekcourses/refs/heads/main/img/6-2.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 3rem 0 5rem;
+            text-align: center;
+            margin-top: 0;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e6a500;
+            transform: translateY(-2px);
+        }
+        
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 0.5rem auto;
+        }
+        
+        /* Lessons Grid */
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .lesson-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .lesson-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .lesson-img {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .lesson-content {
+            padding: 1.5rem;
+        }
+        
+        .lesson-content h3 {
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+        }
+        
+        .lesson-content p {
+            margin-bottom: 1.2rem;
+            color: #666;
+        }
+        
+        .level {
+            display: inline-block;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .level.beginner {
+            background-color: #e1f5fe;
+            color: #0277bd;
+        }
+        
+        .level.intermediate {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        
+        .level.advanced {
+            background-color: #fce4ec;
+            color: #c2185b;
+        }
+        
+        /* Vocabulary Section */
+        .vocabulary-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+        
+        .vocabulary-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .category-btn {
+            background-color: var(--light-color);
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .category-btn.active, 
+        .category-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .vocabulary-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .vocabulary-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        
+        .vocabulary-item:hover {
+            background-color: #e9f5ff;
+        }
+        
+        .vocabulary-item .word {
+            flex: 1;
+            font-weight: 600;
+        }
+        
+        .vocabulary-item .translation {
+            flex: 1;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .play-audio {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        /* Exercises Section */
+        .exercise-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+        
+        .exercise {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .exercise:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .exercise h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .question {
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .option input {
+            margin-right: 0.5rem;
+        }
+        
+        .result {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .result.correct {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            display: block;
+        }
+        
+        .result.incorrect {
+            background-color: #ffebee;
+            color: #c62828;
+            display: block;
+        }
+        
+        /* Progress Section */
+        .progress-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin: 1.5rem 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: var(--success-color);
+            width: 30%;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        .stat-card h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #777;
+        }
+        
+        .close-modal:hover {
+            color: var(--dark-color);
+        }
+        
+        .alphabet-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 1.5rem 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .alphabet-letter {
+            background-color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .alphabet-letter::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .alphabet-letter:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .alphabet-letter:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .alphabet-letter:active {
+            transform: scale(0.95);
+        }
+        
+        .greek-char {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .letter-name {
+            font-size: 0.7rem;
+            color: var(--dark-color);
+        }
+        
+        /* Irregular Verbs Styles */
+        .irregular-verbs-container {
+            margin-top: 2rem;
+        }
+        
+        .verbs-module {
+            margin-bottom: 2rem;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .search-filter {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        #grammar-cards-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .grammar-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            perspective: 1000px;
+        }
+        
+        .grammar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .grammar-card.infinitive {
+            border-top: 5px solid var(--primary-color);
+        }
+        
+        .grammar-card.past {
+            border-top: 5px solid #e74c3c;
+        }
+        
+        .grammar-card.future {
+            border-top: 5px solid #2ecc71;
+        }
+        
+        .grammar-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .grammar-card.flipped .grammar-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .grammar-card-front, .grammar-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .grammar-card-back {
+            background-color: #4CAF50;
+            border-radius: 10px;
+            transform: rotateY(180deg);
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .verb-infinitive {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .verb-past {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #e74c3c;
+        }
+        
+        .verb-future {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2ecc71;
+        }
+        
+        .verb-translation {
+            font-size: 18px;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+        
+        .verb-tense-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #777;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        
+        .card-counter {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: var(--dark-color);
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Culture Section */
+        .culture-section {
+            margin-bottom: 2rem;
+        }
+        
+        .culture-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .idiom-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+        }
+        
+        .idiom-item p {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .modal-content {
+                width: 95%;
+                padding: 1.5rem;
+            }
+            
+            .controls {
+                flex-direction: column;
+            }
+            
+            #grammar-cards-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Learn<span>Greek</span></div>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="#lessons">Lessons</a></li>
+                        <li><a href="#vocabulary">Vocabulary</a></li>
+                        <li><a href="#exercises">Exercises</a></li>
+                        <li><a href="#progress">Progress</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Learn Greek with Interactive Lessons</h1>
+            <p>Master the Greek language through our comprehensive English-Greek course designed for all levels. Start your journey today!</p>
+            <a href="#lessons" class="btn">Start Learning</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Lessons Section -->
+        <section id="lessons">
+            <h2 class="section-title">Interactive Lessons</h2>
+            <div class="lessons-grid">
+                <!-- Lesson 1 -->
+                <div class="lesson-card">
+                    <div class="lesson-img" style="background-image: url('https://raw.githubusercontent.com/KarinaR-Ch/Greekcourses/refs/heads/main/img/ModernGreekBeginners_Hero.jpg');"></div>
+                    <div class="lesson-content">
+                        <span class="level beginner">Beginner</span>
+                        <h3>Greek Alphabet & Pronunciation</h3>
+                        <p>Learn the Greek alphabet, letter sounds, and basic pronunciation rules.</p>
+                        <a href="#" class="btn open-modal" data-modal="alphabet-modal">Start Lesson</a>
+                    </div>
+                </div>
+                
+                <!-- Lesson 2 -->
+                <div class="lesson-card">
+                    <div class="lesson-img" style="background-image: url('https://raw.githubusercontent.com/KarinaR-Ch/Greekcourses/refs/heads/main/img/AI_Generated_Image_2025-10-14_498174955064201.png');"></div>
+                    <div class="lesson-content">
+                        <span class="level beginner">Beginner</span>
+                        <h3>Greetings & Introductions</h3>
+                        <p>Master common Greek greetings, introductions, and polite expressions.</p>
+                        <a href="#" class="btn">Start Lesson</a>
+                    </div>
+                </div>
+                
+                <!-- Lesson 3 -->
+                <div class="lesson-card">
+                    <div class="lesson-img" style="background-image: url('https://raw.githubusercontent.com/KarinaR-Ch/Greekcourses/refs/heads/main/img/Hand-Luggage-Only-7.jpg');"></div>
+                    <div class="lesson-content">
+                        <span class="level intermediate">Intermediate</span>
+                        <h3>Everyday Conversations</h3>
+                        <p>Practice common dialogues for shopping, dining, and daily interactions.</p>
+                        <a href="#vocabulary" class="btn">Start Lesson</a>
+                    </div>
+                </div>
+                
+                <!-- Lesson 4 -->
+                <div class="lesson-card">
+                    <div class="lesson-img" style="background-image: url('https://raw.githubusercontent.com/KarinaR-Ch/Greekcourses/refs/heads/main/img/grammar_fun_blog.jpg');"></div>
+                    <div class="lesson-content">
+                        <span class="level intermediate">Intermediate</span>
+                        <h3>Grammar Essentials</h3>
+                        <p>Learn Greek verb conjugations, noun cases, and sentence structure.</p>
+                        <a href="#" class="btn open-modal" data-modal="grammar-modal">Start Lesson</a>
+                    </div>
+                </div>
+                
+                <!-- Lesson 5 -->
+                <div class="lesson-card">
+                    <div class="lesson-img" style="background-image: url('https://raw.githubusercontent.com/KarinaR-Ch/Greekcourses/refs/heads/main/img/TAL-basic-greek-words-SPEAKGREEK0325-715ec287e30f4607922a51e614785375.jpg');"></div>
+                    <div class="lesson-content">
+                        <span class="level advanced">Advanced</span>
+                        <h3>Greek Culture & Idioms</h3>
+                        <p>Explore Greek culture, idioms, and advanced conversational skills.</p>
+                        <a href="#" class="btn open-modal" data-modal="culture-modal">Start Lesson</a>
+                    </div>
+                </div>
+                
+                <!-- Lesson 6 -->
+                <div class="lesson-card">
+                    <div class="lesson-img" style="background-image: url('https://raw.githubusercontent.com/KarinaR-Ch/Greekcourses/refs/heads/main/img/woods.jpg');"></div>
+                    <div class="lesson-content">
+                        <span class="level advanced">Advanced</span>
+                        <h3>Business Greek</h3>
+                        <p>Learn professional Greek vocabulary and communication for business settings.</p>
+                        <a href="#" class="btn">Start Lesson</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vocabulary Section -->
+        <section id="vocabulary">
+            <h2 class="section-title">Vocabulary Builder</h2>
+            <div class="vocabulary-container">
+                <div class="vocabulary-categories">
+                    <button class="category-btn active" data-category="common">Common Words</button>
+                    <button class="category-btn" data-category="food">Food & Dining</button>
+                    <button class="category-btn" data-category="travel">Travel</button>
+                    <button class="category-btn" data-category="family">Family & Relationships</button>
+                    <button class="category-btn" data-category="numbers">Numbers & Time</button>
+                </div>
+                
+                <div class="vocabulary-list" id="vocabulary-list">
+                    <!-- Common words will be loaded by default -->
+                    <div class="vocabulary-item">
+                        <div class="word">Hello</div>
+                        <div class="translation">Γειά σου (Ya sou)</div>
+                        <button class="play-audio">🔊</button>
+                    </div>
+                    <div class="vocabulary-item">
+                        <div class="word">Thank you</div>
+                        <div class="translation">Ευχαριστώ (Efharistó)</div>
+                        <button class="play-audio">🔊</button>
+                    </div>
+                    <div class="vocabulary-item">
+                        <div class="word">Yes</div>
+                        <div class="translation">Ναι (Ne)</div>
+                        <button class="play-audio">🔊</button>
+                    </div>
+                    <div class="vocabulary-item">
+                        <div class="word">No</div>
+                        <div class="translation">Όχι (Óchi)</div>
+                        <button class="play-audio">🔊</button>
+                    </div>
+                    <div class="vocabulary-item">
+                        <div class="word">Please</div>
+                        <div class="translation">Παρακαλώ (Parakaló)</div>
+                        <button class="play-audio">🔊</button>
+                    </div>
+                    <div class="vocabulary-item">
+                        <div class="word">Good morning</div>
+                        <div class="translation">Καλημέρα (Kaliméra)</div>
+                        <button class="play-audio">🔊</button>
+                    </div>
+                    <div class="vocabulary-item">
+                        <div class="word">Good night</div>
+                        <div class="translation">Καληνύχτα (Kalinýchta)</div>
+                        <button class="play-audio">🔊</button>
+                    </div>
+                    <div class="vocabulary-item">
+                        <div class="word">How are you?</div>
+                        <div class="translation">Τι κάνεις; (Ti kánis?)</div>
+                        <button class="play-audio">🔊</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exercises Section -->
+        <section id="exercises">
+            <h2 class="section-title">Practice Exercises</h2>
+            <div class="exercise-container">
+                <!-- Exercise 1 -->
+                <div class="exercise">
+                    <h3>Multiple Choice</h3>
+                    <p class="question">What is the Greek word for "water"?</p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="q1a" name="q1" value="a">
+                            <label for="q1a">Νερό (Neró)</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q1b" name="q1" value="b">
+                            <label for="q1b">Ψωμί (Psomí)</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q1c" name="q1" value="c">
+                            <label for="q1c">Καφές (Kafés)</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q1d" name="q1" value="d">
+                            <label for="q1d">Γάλα (Gála)</label>
+                        </div>
+                    </div>
+                    <button class="btn check-answer" data-correct="a">Check Answer</button>
+                    <div class="result"></div>
+                </div>
+                
+                <!-- Exercise 2 -->
+                <div class="exercise">
+                    <h3>Fill in the Blank</h3>
+                    <p class="question">Complete the Greek phrase: "Καλή ______" (Good appetite)</p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="q2a" name="q2" value="a">
+                            <label for="q2a">μέρα</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q2b" name="q2" value="b">
+                            <label for="q2b">νύχτα</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q2c" name="q2" value="c">
+                            <label for="q2c">όρεξη</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q2d" name="q2" value="d">
+                            <label for="q2d">τυχη</label>
+                        </div>
+                    </div>
+                    <button class="btn check-answer" data-correct="c">Check Answer</button>
+                    <div class="result"></div>
+                </div>
+                
+                <!-- Exercise 3 -->
+                <div class="exercise">
+                    <h3>Matching</h3>
+                    <p class="question">Match the Greek words with their English translations:</p>
+                    <div class="options">
+                        <div class="option">
+                            <span>Σπίτι (Spíti)</span> - 
+                            <select class="match-select" data-correct="home">
+                                <option value="">Select</option>
+                                <option value="home">Home</option>
+                                <option value="car">Car</option>
+                                <option value="book">Book</option>
+                            </select>
+                        </div>
+                        <div class="option">
+                            <span>Αυτοκίνητο (Aftokínito)</span> - 
+                            <select class="match-select" data-correct="car">
+                                <option value="">Select</option>
+                                <option value="home">Home</option>
+                                <option value="car">Car</option>
+                                <option value="book">Book</option>
+                            </select>
+                        </div>
+                        <div class="option">
+                            <span>Βιβλίο (Vivlío)</span> - 
+                            <select class="match-select" data-correct="book">
+                                <option value="">Select</option>
+                                <option value="home">Home</option>
+                                <option value="car">Car</option>
+                                <option value="book">Book</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn check-matching">Check Answers</button>
+                    <div class="result"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Progress Section -->
+        <section id="progress">
+            <h2 class="section-title">Your Learning Progress</h2>
+            <div class="progress-section">
+                <h3>Overall Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <p>You've completed 30% of the course. Keep going!</p>
+                
+                <div class="stats">
+                    <div class="stat-card">
+                        <h3>12</h3>
+                        <p>Lessons Completed</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>87</h3>
+                        <p>Vocabulary Words</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>24</h3>
+                        <p>Exercises Solved</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>5</h3>
+                        <p>Streak Days</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Learn Greek</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Method</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Greek Grammar Guide</a></li>
+                        <li><a href="#">Pronunciation Tips</a></li>
+                        <li><a href="#">Cultural Notes</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="#">Community Forum</a></li>
+                        <li><a href="#">Language Partners</a></li>
+                        <li><a href="#">Social Media</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Learn Greek. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Windows -->
+    <div id="alphabet-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Greek Alphabet & Pronunciation</h2>
+            <p>The Greek alphabet has 24 letters. Here's a complete guide to help you learn them:</p>
+            
+            <div class="alphabet-container">
+                <div class="alphabet-letter" data-sound="alpha">
+                    <div class="greek-char">Α α</div>
+                    <div class="letter-name">Alpha</div>
+                </div>
+                <div class="alphabet-letter" data-sound="bita">
+                    <div class="greek-char">Β β</div>
+                    <div class="letter-name">Bita</div>
+                </div>
+                <div class="alphabet-letter" data-sound="gamma">
+                    <div class="greek-char">Γ γ</div>
+                    <div class="letter-name">Gamma</div>
+                </div>
+                <div class="alphabet-letter" data-sound="delta">
+                    <div class="greek-char">Δ δ</div>
+                    <div class="letter-name">Delta</div>
+                </div>
+                <div class="alphabet-letter" data-sound="epsilon">
+                    <div class="greek-char">Ε ε</div>
+                    <div class="letter-name">Epsilon</div>
+                </div>
+                <div class="alphabet-letter" data-sound="zita">
+                    <div class="greek-char">Ζ ζ</div>
+                    <div class="letter-name">Zita</div>
+                </div>
+                <div class="alphabet-letter" data-sound="ita">
+                    <div class="greek-char">Η η</div>
+                    <div class="letter-name">Ita</div>
+                </div>
+                <div class="alphabet-letter" data-sound="thita">
+                    <div class="greek-char">Θ θ</div>
+                    <div class="letter-name">Thita</div>
+                </div>
+                <div class="alphabet-letter" data-sound="iota">
+                    <div class="greek-char">Ι ι</div>
+                    <div class="letter-name">Iota</div>
+                </div>
+                <div class="alphabet-letter" data-sound="kappa">
+                    <div class="greek-char">Κ κ</div>
+                    <div class="letter-name">Kappa</div>
+                </div>
+                <div class="alphabet-letter" data-sound="lambda">
+                    <div class="greek-char">Λ λ</div>
+                    <div class="letter-name">Lambda</div>
+                </div>
+                <div class="alphabet-letter" data-sound="mi">
+                    <div class="greek-char">Μ μ</div>
+                    <div class="letter-name">Mi</div>
+                </div>
+                <div class="alphabet-letter" data-sound="ni">
+                    <div class="greek-char">Ν ν</div>
+                    <div class="letter-name">Ni</div>
+                </div>
+                <div class="alphabet-letter" data-sound="ksi">
+                    <div class="greek-char">Ξ ξ</div>
+                    <div class="letter-name">Ksi</div>
+                </div>
+                <div class="alphabet-letter" data-sound="omicron">
+                    <div class="greek-char">Ο ο</div>
+                    <div class="letter-name">Omicron</div>
+                </div>
+                <div class="alphabet-letter" data-sound="pi">
+                    <div class="greek-char">Π π</div>
+                    <div class="letter-name">Pi</div>
+                </div>
+                <div class="alphabet-letter" data-sound="rho">
+                    <div class="greek-char">Ρ ρ</div>
+                    <div class="letter-name">Rho</div>
+                </div>
+                <div class="alphabet-letter" data-sound="sigma">
+                    <div class="greek-char">Σ σ</div>
+                    <div class="letter-name">Sigma</div>
+                </div>
+                <div class="alphabet-letter" data-sound="tau">
+                    <div class="greek-char">Τ τ</div>
+                    <div class="letter-name">Tau</div>
+                </div>
+                <div class="alphabet-letter" data-sound="upsilon">
+                    <div class="greek-char">Υ υ</div>
+                    <div class="letter-name">Upsilon</div>
+                </div>
+                <div class="alphabet-letter" data-sound="phi">
+                    <div class="greek-char">Φ φ</div>
+                    <div class="letter-name">Phi</div>
+                </div>
+                <div class="alphabet-letter" data-sound="chi">
+                    <div class="greek-char">Χ χ</div>
+                    <div class="letter-name">Chi</div>
+                </div>
+                <div class="alphabet-letter" data-sound="psi">
+                    <div class="greek-char">Ψ ψ</div>
+                    <div class="letter-name">Psi</div>
+                </div>
+                <div class="alphabet-letter" data-sound="omega">
+                    <div class="greek-char">Ω ω</div>
+                    <div class="letter-name">Omega</div>
+                </div>
+            </div>
+            
+            <h3>Pronunciation Tips:</h3>
+            <ul>
+                <li>Greek is a phonetic language - words are pronounced as they're written</li>
+                <li>Accent marks (΄) indicate which syllable to stress</li>
+                <li>Double consonants are pronounced separately</li>
+                <li>Some letter combinations create unique sounds (e.g., μπ = b, ντ = d)</li>
+            </ul>
+            
+            <div class="btn-container" style="text-align: center; margin-top: 2rem;">
+                <button class="btn close-modal-btn">Close Lesson</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="grammar-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Greek Irregular Verbs</h2>
+            <p>Learn the most common irregular verbs in Greek with their future and past tense forms.</p>
+            
+            <div class="irregular-verbs-container">
+                <div class="verbs-module">
+                    <div class="controls">
+                        <div class="search-filter">
+                            <input type="text" id="grammar-search" placeholder="Search verbs...">
+                            <select id="grammar-difficulty">
+                                <option value="all">All verbs</option>
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="card-counter" id="grammar-card-counter"></div>
+                    
+                    <div class="cards-container" id="grammar-cards-container">
+                        <!-- Cards will be added here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="btn-container" style="text-align: center; margin-top: 2rem;">
+                <button class="btn close-modal-btn">Close Lesson</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="culture-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Greek Culture & Idioms</h2>
+            <p>Understanding Greek culture and idioms is essential for mastering the language and connecting with Greek speakers.</p>
+            
+            <div class="culture-section">
+                <h3>Greek Cultural Etiquette</h3>
+                <ul>
+                    <li><strong>Philoxenia:</strong> The famous Greek hospitality - Greeks are known for their warm welcome to strangers</li>
+                    <li><strong>Family Values:</strong> Family is central to Greek life, with strong intergenerational bonds</li>
+                    <li><strong>Gesture Communication:</strong> Greeks often use hand gestures to emphasize speech</li>
+                    <li><strong>Mealtime:</strong> Lunch is typically the main meal, eaten around 2-3 PM</li>
+                    <li><strong>Name Days:</strong> Celebrating one's name day (day of the saint they're named after) is often more important than birthdays</li>
+                </ul>
+            </div>
+            
+            <div class="culture-section">
+                <h3>Common Greek Idioms</h3>
+                
+                <div class="idiom-item">
+                    <p><strong>In English:</strong> "It's all Greek to me"</p>
+                    <p><strong>In Greek:</strong> "Αυτά μου φαίνονται κινέζικα" (These seem Chinese to me)</p>
+                    <p><em>Meaning: Something is completely incomprehensible</em></p>
+                </div>
+                
+                <div class="idiom-item">
+                    <p><strong>In English:</strong> "To put oil on the fire"</p>
+                    <p><strong>In Greek:</strong> "Βάζω λάδι στη φωτιά" (I put oil on the fire)</p>
+                    <p><em>Meaning: To make a bad situation worse</em></p>
+                </div>
+                
+                <div class="idiom-item">
+                    <p><strong>In English:</strong> "To have ants in your pants"</p>
+                    <p><strong>In Greek:</strong> "Έχω τσουτσέκια" (I have little ants)</p>
+                    <p><em>Meaning: To be restless or unable to sit still</em></p>
+                </div>
+                
+                <div class="idiom-item">
+                    <p><strong>In English:</strong> "When the pig flies"</p>
+                    <p><strong>In Greek:</strong> "Όταν βγει ο ήλιος από τη δυσμή" (When the sun rises from the west)</p>
+                    <p><em>Meaning: Something that will never happen</em></p>
+                </div>
+                
+                <div class="idiom-item">
+                    <p><strong>In English:</strong> "To break the egg in your pocket"</p>
+                    <p><strong>In Greek:</strong> "Σπάω το αυγό στην τσέπη μου" (I break the egg in my pocket)</p>
+                    <p><em>Meaning: To spend all your money</em></p>
+                </div>
+            </div>
+            
+            <div class="culture-section">
+                <h3>Traditional Greek Celebrations</h3>
+                <ul>
+                    <li><strong>Name Days (Ονομαστική Εορτή):</strong> Celebrated with visits, phone calls, and often small gatherings</li>
+                    <li><strong>Easter (Πάσχα):</strong> The most important religious holiday with midnight church services and festive meals</li>
+                    <li><strong>Apokries (Carnival):</strong> A period of celebration before Lent with costumes and parties</li>
+                    <li><strong>August 15th (Κοίμηση της Θεοτόκου):</strong> A major religious holiday honoring the Virgin Mary</li>
+                    <li><strong>Ochi Day (Επέτειος του Όχι):</strong> October 28th, commemorating Greece's refusal to surrender to Italy in WWII</li>
+                </ul>
+            </div>
+            
+            <div class="culture-section">
+                <h3>Greek Superstitions</h3>
+                <ul>
+                    <li><strong>Matiasma (Evil Eye):</strong> The belief that someone can harm you with an envious glance</li>
+                    <li><strong>Spitting for Good Luck:</strong> Greeks might pretend to spit three times to ward off bad luck</li>
+                    <li><strong>Tuesday the 13th:</strong> Considered unlucky (not Friday the 13th)</li>
+                    <li><strong>Knocking on Wood:</strong> To avoid tempting fate after mentioning something positive</li>
+                    <li><strong>Pomegranate:</strong> Smashing a pomegranate on New Year's Day brings good luck</li>
+                </ul>
+            </div>
+            
+            <div class="btn-container" style="text-align: center; margin-top: 2rem;">
+                <button class="btn close-modal-btn">Close Lesson</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio elements for Greek letters -->
+    <audio id="alpha-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/letters/alpha.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="bita-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/letters/beta.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="gamma-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/letters/gamma.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="delta-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/letters/delta.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="epsilon-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/letters/epsilon.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="zita-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/letters/zeta.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="ita-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/letters/eta.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="thita-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/letters/theta.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="iota-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/letters/iota.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="kappa-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/letters/kappa.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="lambda-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/letters/lambda.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="mi-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/letters/mu.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="ni-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/letters/nu.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="ksi-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/letters/ksi.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="omicron-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/letters/omicron.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="pi-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/letters/pi.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="rho-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/letters/rho.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="sigma-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/letters/sigma.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="tau-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/letters/tau.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="upsilon-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/letters/upsilon.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="phi-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/letters/phi.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="chi-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/letters/chi.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="psi-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/letters/psi.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="omega-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/letters/omega.mp3?raw=true" type="audio/mpeg">
+    </audio>
+
+    <!-- Audio elements for vocabulary words -->
+    <audio id="hello-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%93%CE%B5%CE%B9%CE%AC%20%CF%83%CE%BF%CF%85.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="sister-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%91%CE%B4%CE%B5%CF%81%CF%86%CE%AE.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="brother-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%91%CE%B4%CE%B5%CF%81%CF%86%CF%8C%CF%82.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="airport-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%91%CE%B5%CF%81%CE%BF%CE%B4%CF%81%CF%8C%CE%BC%CE%B9%CE%BF.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="milk-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%93%CE%B1%CE%BB%CE%B1.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="yogurt-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%93%CE%B9%CE%B1%CE%BF%CF%8D%CF%81%CF%84%CE%B9.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="son-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%93%CE%B9%CE%BF%CF%82.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="ten-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%94%CE%B5%CE%BA%CE%B1.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="two-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%94%CF%85%CE%BF.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="ticket-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%95%CE%B9%CF%83%CE%B9%CF%84%CE%AE%CF%81%CE%B9%CE%BF.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="hundred-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%95%CE%BA%CE%B1%CF%84%CE%BF.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="olive-oil-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%95%CE%BB%CE%B1%CE%B9%CF%8C%CE%BB%CE%B1%CE%B4%CE%BF.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="one-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%95%CE%BD%CE%B1.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="three-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%A4%CF%81%CE%AF%CE%B1.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="today-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%A3%CE%AE%CE%BC%CE%B5%CF%81%CE%B1.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="four-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%A4%CE%AD%CF%83%CF%83%CE%B5%CF%81%CE%B1.mp3?raw=true" type="audio/mpeg">
+    </audio>
+    <audio id="five-sound" preload="auto">
+        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%A0%CE%AD%CE%BD%CF%84%CE%B5.mp3?raw=true" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Vocabulary Category Switching
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            const vocabularyList = document.getElementById('vocabulary-list');
+            
+            // Sample vocabulary data for different categories
+            const vocabularyData = {
+                common: [
+                    { english: "Hello", greek: "Γειά σου (Ya sou)" },
+                    { english: "Thank you", greek: "Ευχαριστώ (Efharistó)" },
+                    { english: "Yes", greek: "Ναι (Ne)" },
+                    { english: "No", greek: "Όχι (Óchi)" },
+                    { english: "Please", greek: "Παρακαλώ (Parakaló)" },
+                    { english: "Good morning", greek: "Καλημέρα (Kaliméra)" },
+                    { english: "Good night", greek: "Καληνύχτα (Kalinýchta)" },
+                    { english: "How are you?", greek: "Τι κάνεις; (Ti kánis?)" }
+                ],
+                food: [
+                    { english: "Water", greek: "Νερό (Neró)" },
+                    { english: "Bread", greek: "Ψωμί (Psomí)" },
+                    { english: "Coffee", greek: "Καφές (Kafés)" },
+                    { english: "Milk", greek: "Γάλα (Gála)" },
+                    { english: "Wine", greek: "Κρασί (Krasí)" },
+                    { english: "Cheese", greek: "Τυρί (Tirí)" },
+                    { english: "Olive oil", greek: "Ελαιόλαδο (Eleolado)" },
+                    { english: "Yogurt", greek: "Γιαούρτι (Giaoúrti)" }
+                ],
+                travel: [
+                    { english: "Airport", greek: "Αεροδρόμιο (Aerodrómio)" },
+                    { english: "Hotel", greek: "Ξενοδοχείο (Xenodocheío)" },
+                    { english: "Beach", greek: "Παραλία (Paralía)" },
+                    { english: "Museum", greek: "Μουσείο (Mouseío)" },
+                    { english: "Restaurant", greek: "Εστιατόριο (Estiatório)" },
+                    { english: "Ticket", greek: "Εισιτήριο (Isitírio)" },
+                    { english: "Map", greek: "Χάρτης (Chártis)" },
+                    { english: "Bus", greek: "Λεωφορείο (Leoforeío)" }
+                ],
+                family: [
+                    { english: "Mother", greek: "Μητέρα (Mitéra)" },
+                    { english: "Father", greek: "Πατέρας (Patéras)" },
+                    { english: "Brother", greek: "Αδερφός (Aderfós)" },
+                    { english: "Sister", greek: "Αδερφή (Aderfí)" },
+                    { english: "Son", greek: "Γιος (Yios)" },
+                    { english: "Daughter", greek: "Κόρη (Kóri)" },
+                    { english: "Friend", greek: "Φίλος (Fílos)" },
+                    { english: "Family", greek: "Οικογένεια (Ikogénia)" }
+                ],
+                numbers: [
+                    { english: "One", greek: "Ένα (Éna)" },
+                    { english: "Two", greek: "Δύο (Dío)" },
+                    { english: "Three", greek: "Τρία (Tría)" },
+                    { english: "Four", greek: "Τέσσερα (Téssera)" },
+                    { english: "Five", greek: "Πέντε (Pénde)" },
+                    { english: "Ten", greek: "Δέκα (Déka)" },
+                    { english: "Hundred", greek: "Εκατό (Ekató)" },
+                    { english: "Today", greek: "Σήμερα (Símera)" }
+                ]
+            };
+            
+            // Handle category button clicks
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Get the category
+                    const category = this.getAttribute('data-category');
+                    
+                    // Clear the vocabulary list
+                    vocabularyList.innerHTML = '';
+                    
+                    // Add vocabulary items for the selected category
+                    vocabularyData[category].forEach(item => {
+                        const vocabularyItem = document.createElement('div');
+                        vocabularyItem.className = 'vocabulary-item';
+                        vocabularyItem.innerHTML = `
+                            <div class="word">${item.english}</div>
+                            <div class="translation">${item.greek}</div>
+                            <button class="play-audio">🔊</button>
+                        `;
+                        vocabularyList.appendChild(vocabularyItem);
+                    });
+                    
+                    // Add event listeners to new audio buttons
+                    addAudioListeners();
+                });
+            });
+            
+            // Exercise checking functionality
+            const checkButtons = document.querySelectorAll('.check-answer');
+            
+            checkButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const correctAnswer = this.getAttribute('data-correct');
+                    const questionElement = this.parentElement;
+                    const selectedOption = questionElement.querySelector(`input[name="${this.previousElementSibling.querySelector('input').name}"]:checked`);
+                    const resultElement = questionElement.querySelector('.result');
+                    
+                    if (!selectedOption) {
+                        resultElement.textContent = "Please select an answer!";
+                        resultElement.className = "result incorrect";
+                        return;
+                    }
+                    
+                    if (selectedOption.value === correctAnswer) {
+                        resultElement.textContent = "Correct! Well done!";
+                        resultElement.className = "result correct";
+                    } else {
+                        resultElement.textContent = "Incorrect. Try again!";
+                        resultElement.className = "result incorrect";
+                    }
+                });
+            });
+            
+            // Matching exercise functionality
+            const checkMatchingButton = document.querySelector('.check-matching');
+            
+            checkMatchingButton.addEventListener('click', function() {
+                const selects = document.querySelectorAll('.match-select');
+                let allCorrect = true;
+                
+                selects.forEach(select => {
+                    const correctValue = select.getAttribute('data-correct');
+                    if (select.value !== correctValue) {
+                        allCorrect = false;
+                        select.style.border = "2px solid #c62828";
+                    } else {
+                        select.style.border = "2px solid #2e7d32";
+                    }
+                });
+                
+                const resultElement = this.nextElementSibling;
+                if (allCorrect) {
+                    resultElement.textContent = "All correct! Excellent work!";
+                    resultElement.className = "result correct";
+                } else {
+                    resultElement.textContent = "Some answers are incorrect. Please try again.";
+                    resultElement.className = "result incorrect";
+                }
+            });
+            
+            // Audio button functionality for vocabulary
+            function addAudioListeners() {
+                const audioButtons = document.querySelectorAll('.play-audio');
+                
+                audioButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const wordElement = this.parentElement.querySelector('.word');
+                        const word = wordElement.textContent.trim().toLowerCase();
+                        
+                        // Map words to their audio files
+                        const audioMap = {
+                            'hello': 'hello-sound',
+                            'sister': 'sister-sound',
+                            'brother': 'brother-sound',
+                            'airport': 'airport-sound',
+                            'milk': 'milk-sound',
+                            'yogurt': 'yogurt-sound',
+                            'son': 'son-sound',
+                            'ten': 'ten-sound',
+                            'two': 'two-sound',
+                            'ticket': 'ticket-sound',
+                            'hundred': 'hundred-sound',
+                            'olive oil': 'olive-oil-sound',
+                            'one': 'one-sound',
+                            'three': 'three-sound',
+                            'today': 'today-sound',
+                            'four': 'four-sound',
+                            'five': 'five-sound'
+                        };
+                        
+                        const soundId = audioMap[word];
+                        if (soundId) {
+                            const sound = document.getElementById(soundId);
+                            if (sound) {
+                                sound.currentTime = 0;
+                                sound.play().catch(e => {
+                                    console.log("Audio play failed:", e);
+                                });
+                            }
+                        }
+                    });
+                });
+            }
+            
+            // Audio for Greek alphabet
+            const alphabetLetters = document.querySelectorAll('.alphabet-letter');
+            
+            alphabetLetters.forEach(letter => {
+                letter.addEventListener('click', function() {
+                    const soundId = this.getAttribute('data-sound') + '-sound';
+                    const sound = document.getElementById(soundId);
+                    
+                    if (sound) {
+                        sound.currentTime = 0;
+                        sound.play().catch(e => {
+                            console.log("Audio play failed:", e);
+                        });
+                    }
+                    
+                    // Visual feedback
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+            
+            // Initialize audio listeners
+            addAudioListeners();
+            
+            // Smooth scrolling for all anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                if (anchor.getAttribute('href') === '#') return;
+                if (anchor.classList.contains('open-modal')) return;
+
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Modal functionality
+            const modalButtons = document.querySelectorAll('.open-modal');
+            const modals = document.querySelectorAll('.modal');
+            const closeButtons = document.querySelectorAll('.close-modal, .close-modal-btn');
+            
+            // Open modal
+            modalButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const modalId = this.getAttribute('data-modal');
+                    const modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = 'block';
+                        
+                        // If it's the grammar modal, initialize the verb cards
+                        if (modalId === 'grammar-modal') {
+                            initGrammarModule();
+                        }
+                    }
+                });
+            });
+            
+            // Close modal
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    modals.forEach(modal => {
+                        modal.style.display = 'none';
+                    });
+                });
+            });
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', function(e) {
+                modals.forEach(modal => {
+                    if (e.target === modal) {
+                        modal.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Irregular Verbs Module
+            function initGrammarModule() {
+                // Database of Greek irregular verbs with English translations
+                const greekVerbs = [
+                    {
+                        infinitive: "λέω",
+                        translation: "to say",
+                        future: "θα πω",
+                        past: "είπα",
+                        difficulty: "easy"
+                    },
+                    {
+                        infinitive: "βλέπω",
+                        translation: "to see",
+                        future: "θα δω",
+                        past: "είδα",
+                        difficulty: "easy"
+                    },
+                    {
+                        infinitive: "έρχομαι",
+                        translation: "to come",
+                        future: "θα έρθω",
+                        past: "ήρθα",
+                        difficulty: "medium"
+                    },
+                    {
+                        infinitive: "πηγαίνω",
+                        translation: "to go",
+                        future: "θα πάω",
+                        past: "πήγα",
+                        difficulty: "medium"
+                    },
+                    {
+                        infinitive: "τρώω",
+                        translation: "to eat",
+                        future: "θα φάω",
+                        past: "έφαγα",
+                        difficulty: "medium"
+                    },
+                    {
+                        infinitive: "πίνω",
+                        translation: "to drink",
+                        future: "θα πιω",
+                        past: "ήπια",
+                        difficulty: "easy"
+                    },
+                    {
+                        infinitive: "γράφω",
+                        translation: "to write",
+                        future: "θα γράψω",
+                        past: "έγραψа",
+                        difficulty: "easy"
+                    },
+                    {
+                        infinitive: "διαβάζω",
+                        translation: "to read",
+                        future: "θα διαβάσω",
+                        past: "διάβασα",
+                        difficulty: "easy"
+                    },
+                    {
+                        infinitive: "ακούω",
+                        translation: "to hear",
+                        future: "θα ακούσω",
+                        past: "άκουσα",
+                        difficulty: "easy"
+                    },
+                    {
+                        infinitive: "καταλαβαίνω",
+                        translation: "to understand",
+                        future: "θα καταλάβω",
+                        past: "κατάλαβα",
+                        difficulty: "hard"
+                    },
+                    {
+                        infinitive: "ξέρω",
+                        translation: "to know",
+                        future: "θα μάθω",
+                        past: "ήξερα",
+                        difficulty: "hard"
+                    },
+                    {
+                        infinitive: "μπορώ",
+                        translation: "to be able to",
+                        future: "θα μπορέσω",
+                        past: "μπόρεσα",
+                        difficulty: "medium"
+                    },
+                    {
+                        infinitive: "θέλω",
+                        translation: "to want",
+                        future: "θα θελήσω",
+                        past: "θέλησα",
+                        difficulty: "medium"
+                    },
+                    {
+                        infinitive: "βρίσκω",
+                        translation: "to find",
+                        future: "θα βρω",
+                        past: "βρήκα",
+                        difficulty: "hard"
+                    },
+                    {
+                        infinitive: "παίρνω",
+                        translation: "to take",
+                        future: "θα πάρω",
+                        past: "πήρα",
+                        difficulty: "medium"
+                    }
+                ];
+
+                // DOM elements for the grammar module
+                const grammarCardsContainer = document.getElementById('grammar-cards-container');
+                const grammarCardCounter = document.getElementById('grammar-card-counter');
+                const grammarSearch = document.getElementById('grammar-search');
+                const grammarDifficulty = document.getElementById('grammar-difficulty');
+                
+                let filteredVerbs = [...greekVerbs];
+                
+                // Render the verb cards
+                function renderGrammarCards() {
+                    grammarCardsContainer.innerHTML = '';
+                    
+                    filteredVerbs.forEach(verb => {
+                        createGrammarCard(verb, 'infinitive');
+                        createGrammarCard(verb, 'past');
+                        createGrammarCard(verb, 'future');
+                    });
+                    
+                    updateGrammarCardCounter();
+                }
+                
+                // Create a single verb card
+                function createGrammarCard(verb, type) {
+                    const card = document.createElement('div');
+                    card.className = `grammar-card ${type}`;
+                    
+                    let frontContent = '';
+                    
+                    switch(type) {
+                        case 'infinitive':
+                            frontContent = `
+                                <div class="verb-tense-label">Infinitive</div>
+                                <div class="verb-infinitive">${verb.infinitive}</div>
+                                <div class="verb-translation">${verb.translation}</div>
+                            `;
+                            break;
+                            
+                        case 'past':
+                            frontContent = `
+                                <div class="verb-tense-label">Past tense</div>
+                                <div class="verb-past">${verb.past}</div>
+                                <div class="verb-translation">${verb.translation}</div>
+                            `;
+                            break;
+                            
+                        case 'future':
+                            frontContent = `
+                                <div class="verb-tense-label">Future tense</div>
+                                <div class="verb-future">${verb.future}</div>
+                                <div class="verb-translation">${verb.translation}</div>
+                            `;
+                            break;
+                    }
+                    
+                    card.innerHTML = `
+                        <div class="grammar-card-inner">
+                            <div class="grammar-card-front">
+                                ${frontContent}
+                            </div>
+                            <div class="grammar-card-back">
+                                😊
+                            </div>
+                        </div>
+                    `;
+                    
+                    card.addEventListener('click', () => {
+                        card.classList.toggle('flipped');
+                    });
+                    
+                    grammarCardsContainer.appendChild(card);
+                }
+                
+                // Update the card counter
+                function updateGrammarCardCounter() {
+                    const cardCount = filteredVerbs.length * 3;
+                    grammarCardCounter.textContent = `Found cards: ${cardCount}`;
+                }
+                
+                // Filter verbs based on search and difficulty
+                function filterGrammarVerbs() {
+                    const searchTerm = grammarSearch.value.toLowerCase();
+                    const difficulty = grammarDifficulty.value;
+                    
+                    filteredVerbs = greekVerbs.filter(verb => {
+                        const matchesSearch = verb.infinitive.toLowerCase().includes(searchTerm) || 
+                                             verb.translation.toLowerCase().includes(searchTerm) ||
+                                             verb.future.toLowerCase().includes(searchTerm) ||
+                                             verb.past.toLowerCase().includes(searchTerm);
+                        const matchesDifficulty = difficulty === 'all' || verb.difficulty === difficulty;
+                        
+                        return matchesSearch && matchesDifficulty;
+                    });
+                    
+                    renderGrammarCards();
+                }
+                
+                // Event listeners for grammar module
+                grammarSearch.addEventListener('input', filterGrammarVerbs);
+                grammarDifficulty.addEventListener('change', filterGrammarVerbs);
+                
+                // Initial render
+                renderGrammarCards();
+            }
+        });
+    </script>
+</body>
+</html>
