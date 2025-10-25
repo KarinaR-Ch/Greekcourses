@@ -666,8 +666,10 @@
 
         /* Footer - Changed to yellow with blue text and 50% transparency */
         footer {
-            background-color: rgba(248, 181, 0, 0.5); /* Yellow background with 50% transparency */
-            color: var(--primary-color); /* Blue text */
+            background-color: rgba(248, 181, 0, 0.5);
+            /* Yellow background with 50% transparency */
+            color: var(--primary-color);
+            /* Blue text */
             padding: 3rem 0 1.5rem;
         }
 
@@ -680,7 +682,8 @@
 
         .footer-column h3 {
             margin-bottom: 1.5rem;
-            color: var(--primary-color); /* Blue headings */
+            color: var(--primary-color);
+            /* Blue headings */
         }
 
         .footer-column ul {
@@ -692,20 +695,24 @@
         }
 
         .footer-column ul li a {
-            color: var(--primary-color); /* Blue links */
+            color: var(--primary-color);
+            /* Blue links */
             text-decoration: none;
             transition: color 0.3s;
         }
 
         .footer-column ul li a:hover {
-            color: #0a4a7a; /* Darker blue on hover */
+            color: #0a4a7a;
+            /* Darker blue on hover */
         }
 
         .copyright {
             text-align: center;
             padding-top: 1.5rem;
-            border-top: 1px solid var(--primary-color); /* Blue border */
-            color: var(--primary-color); /* Blue text */
+            border-top: 1px solid var(--primary-color);
+            /* Blue border */
+            color: var(--primary-color);
+            /* Blue text */
             font-size: 0.9rem;
         }
 
@@ -739,6 +746,12 @@
         #scroll-to-top:hover {
             background-color: var(--secondary-color);
             transform: translateY(-3px);
+        }
+
+        /* Greetings Modal Specific Styles */
+        #greetings-modal .modal-content {
+            max-height: 85vh;
+            overflow-y: auto;
         }
 
         /* Responsive Design */
@@ -786,6 +799,11 @@
                 width: 45px;
                 height: 45px;
                 font-size: 20px;
+            }
+
+            /* Greetings Modal Mobile */
+            #greetings-modal .modal-content {
+                max-height: 90vh;
             }
         }
     </style>
@@ -1256,13 +1274,19 @@
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <h2>Greetings & Introductions</h2>
-            <p style="font-size: larger;">Καλημερα, ονομάζομαι Καρίνα και είμαι Front-end προγραμματίστρια με background στη management and law. Σπουδάζω για να γίνω Fullstack developer. Μιλάω Αγγλικά, Ουκρανικά, Γερμανικά και μαθαίνω Ελληνικά.</p>
-            <p style="font-size: larger;">Μου αρέσει πολύ να δημιουργώ όμορφες ιστοσελίδες σχετικά με τον τουρισμό και τα ταξίδια.</p>
-            
+            <p style="font-size: larger;">Καλημερα, ονομάζομαι Καρίνα και είμαι Front-end προγραμματίστρια με background
+                στη management and law. Σπουδάζω για να γίνω Fullstack developer. Μιλάω Αγγλικά, Ουκρανικά, Γερμανικά
+                και μαθαίνω Ελληνικά.</p>
+            <p style="font-size: larger;">Μου αρέσει πολύ να δημιουργώ όμορφες ιστοσελίδες σχετικά με τον τουρισμό και
+                τα ταξίδια.</p>
+
             <!-- English translation -->
-            <p style="font-size: larger; color: #666; margin-top: 1.5rem;">Good morning, my name is Karina and I am a Front-end programmer with a background in management and law. I am studying to become a Fullstack developer. I speak English, Ukrainian, German and I am learning Greek.</p>
-            <p style="font-size: larger; color: #666;">I really enjoy creating beautiful websites about tourism and travel.</p>
-            
+            <p style="font-size: larger; color: #666; margin-top: 1.5rem;">Good morning, my name is Karina and I am a
+                Front-end programmer with a background in management and law. I am studying to become a Fullstack
+                developer. I speak English, Ukrainian, German and I am learning Greek.</p>
+            <p style="font-size: larger; color: #666;">I really enjoy creating beautiful websites about tourism and
+                travel.</p>
+
             <div class="btn-container" style="text-align: center; margin-top: 2rem;">
                 <button class="btn close-modal-btn">Close Lesson</button>
             </div>
@@ -1400,29 +1424,35 @@
             <span class="close-modal">&times;</span>
             <h2>Greek for Work</h2>
             <p style="font-size: larger;">Τι κάνει ένας Front-End Developer;</p>
-            <p style="font-size: smaller;">Ο Front-End Developer είναι υπεύθυνος για τη σχεδίαση και την υλοποίηση του UI (User Interface) ενός website ή web application. Δημιουργεί το κομμάτι με το οποίο αλληλεπιδρούν οι χρήστες, δίνοντας έμφαση τόσο στην αισθητική όσο και στη λειτουργικότητα.</p>
-            
+            <p style="font-size: smaller;">Ο Front-End Developer είναι υπεύθυνος για τη σχεδίαση και την υλοποίηση του
+                UI (User Interface) ενός website ή web application. Δημιουργεί το κομμάτι με το οποίο αλληλεπιδρούν οι
+                χρήστες, δίνοντας έμφαση τόσο στην αισθητική όσο και στη λειτουργικότητα.</p>
+
             <!-- English translation -->
             <p style="font-size: larger; color: #666; margin-top: 1.5rem;">What does a Front-End Developer do?</p>
-            <p style="font-size: smaller; color: #666;">The Front-End Developer is responsible for designing and implementing the UI (User Interface) of a website or web application. They create the part with which users interact, emphasizing both aesthetics and functionality.</p>
-            
-            <p style="font-size: larger; margin-top: 1.5rem;">Βασικές τεχνολογίες που χρησιμοποιεί ένας Front-End Developer:</p>
+            <p style="font-size: smaller; color: #666;">The Front-End Developer is responsible for designing and
+                implementing the UI (User Interface) of a website or web application. They create the part with which
+                users interact, emphasizing both aesthetics and functionality.</p>
+
+            <p style="font-size: larger; margin-top: 1.5rem;">Βασικές τεχνολογίες που χρησιμοποιεί ένας Front-End
+                Developer:</p>
             <p style="font-size: smaller;">
                 - HTML, CSS – Δομή και στυλ των ιστοσελίδων<br>
                 - JavaScript – Διαδραστικότητα και δυναμικότητα<br>
                 - Frameworks & Libraries – React.js, Vue.js, Angular<br>
                 - UI/UX Design Principles – Κατανόηση καλών πρακτικών σχεδίασης
             </p>
-            
+
             <!-- English translation -->
-            <p style="font-size: larger; color: #666; margin-top: 1.5rem;">Basic technologies used by a Front-End Developer:</p>
+            <p style="font-size: larger; color: #666; margin-top: 1.5rem;">Basic technologies used by a Front-End
+                Developer:</p>
             <p style="font-size: smaller; color: #666;">
                 - HTML, CSS – Structure and style of websites<br>
                 - JavaScript – Interactivity and dynamism<br>
                 - Frameworks & Libraries – React.js, Vue.js, Angular<br>
                 - UI/UX Design Principles – Understanding good design practices
             </p>
-            
+
             <div class="btn-container" style="text-align: center; margin-top: 2rem;">
                 <button class="btn close-modal-btn">Close Lesson</button>
             </div>
@@ -1552,256 +1582,209 @@
     </audio>
 
     <!-- Audio elements for vocabulary words -->
-    <audio id="hello-sound" preload="none">
+    <audio id="hello-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/5lcg3x6h6d1g2ox5n03va/.m4a?rlkey=0btptu8kgybk0xn4linyne9w0&st=v31yn38i&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="thank-you-sound" preload="none">
+    <audio id="thank-you-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/5sgupzfm4pzi41rnmvpub/.m4a?rlkey=mcp1cdxnrlw6wzo9wp7c02mu3&st=il9vaxro&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="yes-sound" preload="none">
+    <audio id="yes-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/fv48vp20bs0oefgrh4h2y/.m4a?rlkey=8xir1lwlygx7fekmj97ph8m8x&st=lqgj3pdv&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="no-sound" preload="none">
+    <audio id="no-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/v8nw6dawza6n0ocs0oocp/.m4a?rlkey=nk3uov62bu0xrh8v4oehzbtdc&st=watzhvmx&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="please-sound" preload="none">
+    <audio id="please-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/pbqk7nt4nhte94lbmu4ip/.m4a?rlkey=7hyaue9ehsl3lm4d2w249w08t&st=t8g4q28e&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="good-morning-sound" preload="none">
+    <audio id="good-morning-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/ot6fwacownfe6dj13sipz/.m4a?rlkey=vn9716ex4sgwbmvuzz7j25riu&st=4zyq9ris&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="good-night-sound" preload="none">
+    <audio id="good-night-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/d3zljzppvurlq5akjv4s6/.m4a?rlkey=4tq9mlyn7px2t5zyuax3jk3e6&st=zy28nmme&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="how-are-you-sound" preload="none">
+    <audio id="how-are-you-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/ztkth9iicvxajye65cj5k/.m4a?rlkey=zp08pars4iuxne5jnloeqtq8t&st=l7wo8l4d&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="water-food-sound" preload="none">
+    <audio id="water-food-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/fix3ycjsnzgzdeljluj7t/.m4a?rlkey=ge7o482zdlgq8brr6c95b6c43&st=psxycd1a&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="bread-food-sound" preload="none">
+    <audio id="bread-food-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/jxjra0o0d8s5ozizhllk6/.m4a?rlkey=8jkfpl6ev0p0igjasu17lx90y&st=8yhuysfv&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="coffee-food-sound" preload="none">
+    <audio id="coffee-food-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/tip7snq29lk55qv4tjl94/.m4a?rlkey=im4itt8hpwvsqfam6atof9isd&st=n7slzdzo&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="milk-food-sound" preload="none">
+    <audio id="milk-food-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/ggvj8k6fv2156j5y5aim6/.m4a?rlkey=w10olc0hqrn3dop8d8gq0q57q&st=zh4x9bl0&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="wine-food-sound" preload="none">
+    <audio id="wine-food-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/h54nhbqy46gajxrozk43m/.m4a?rlkey=qll8ike58bptm9bhl9afkxe0q&st=ikcaz5iv&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="cheese-food-sound" preload="none">
+    <audio id="cheese-food-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/rlnt1cbi94rb8go4jidt8/.m4a?rlkey=64dh9hqgpt7jei8v5oydf3s83&st=nv4jlat5&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="olive-oil-food-sound" preload="none">
+    <audio id="olive-oil-food-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/cs5pn8u5rbs03myphj5i3/.m4a?rlkey=vc34gpglvslceys9wszqs2o3i&st=najiynrt&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="yogurt-food-sound" preload="none">
+    <audio id="yogurt-food-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/g22vxzf7ne9hev5ig1mnr/.m4a?rlkey=cb2dkxz15nq03908pf89mipif&st=e3v2d3js&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="airport-travel-sound" preload="none">
+    <audio id="airport-travel-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/1l5twjo0ou8q7p7xwqs9k/.m4a?rlkey=caur27l2vcyngvg36bd0uwrzx&st=7p1ekbax&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="hotel-travel-sound" preload="none">
+    <audio id="hotel-travel-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/6xnrea9ghph303u9sof73/.m4a?rlkey=8hyi3ard5teqvmd5hx1kxt91d&st=qsk00f7q&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="beach-travel-sound" preload="none">
+    <audio id="beach-travel-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/26nbsz574v6ygsrvbqbup/.m4a?rlkey=9rupbi2c9kljmxf6kmx8vfjwx&st=y399xk9p&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="museum-travel-sound" preload="none">
+    <audio id="museum-travel-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/4qwvjt5kiz41urf21o4pl/.m4a?rlkey=l0ksdivgz11n3gvq3w6xts9kt&st=r2y6nbuu&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="restaurant-travel-sound" preload="none">
+    <audio id="restaurant-travel-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/v8vxq6bk5hkoe6i5yzcx5/.m4a?rlkey=jmurnfa227ehjs9a2tb2e97v9&st=yyyozpuh&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="ticket-travel-sound" preload="none">
+    <audio id="ticket-travel-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/arwtrboazc0csi3fulaz3/.m4a?rlkey=qd2yphl8vpgerpxcblevmm0on&st=tufehvbc&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="map-travel-sound" preload="none">
+    <audio id="map-travel-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/nv3bpe1y034w0cd02zund/.m4a?rlkey=qn3ekm1okboe2kh7tdqy4b0ms&st=ir8iw3ry&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="bus-travel-sound" preload="none">
+    <audio id="bus-travel-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/l2knu4ulw4jv0z1agnnh7/.m4a?rlkey=5r9gtyi909qg2td64wxbvbogs&st=non5hdrs&dl=1"
             type="audio/mp4">
     </audio>
 
     <!-- Додані аудіо для слів родини -->
-    <audio id="mother-sound" preload="none">
+    <audio id="mother-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/d76d7o7d7e41kj4khzwmq/.m4a?rlkey=f4umezse6hcifscwas4d6knxw&st=q0ofm16b&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="father-sound" preload="none">
+    <audio id="father-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/cb5iijs3pr7a0rs4cdnw2/.m4a?rlkey=n4r154t4anmr8se06co5yh7ji&st=58aku58p&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="brother-family-sound" preload="none">
+    <audio id="brother-family-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/3akkwsn7t3ydqlhmcvlrq/.m4a?rlkey=gm71airv1ixznknpdde4vq3mp&st=bs5cxn60&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="sister-family-sound" preload="none">
+    <audio id="sister-family-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/axgwhubo2qkbyls0g7hoz/.m4a?rlkey=41sb28ltl6z133c9ogim57dzv&st=7mp7m77f&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="son-sound" preload="none">
+    <audio id="son-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/h34em1i7znmo5e8t2yvgb/.m4a?rlkey=ya1pdi3688zgjv3iv0z963ncv&st=7icx9z7u&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="daughter-sound" preload="none">
+    <audio id="daughter-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/eydyw4bmlfvbg6ivjg9bj/.m4a?rlkey=e9n8idcn945yjhxc7geiinc9i&st=sh0o0xrg&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="friend-sound" preload="none">
+    <audio id="friend-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/qmvna88gegpa6rxaa7a77/.m4a?rlkey=zrgzjmq7zgdkzyvik8k8ksysk&st=im31ssos&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="family-sound" preload="none">
+    <audio id="family-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/brjjlwim5lsjl661itnwq/.m4a?rlkey=pvjljr5rys6l4va259je6cet4&st=2n6hgchl&dl=1"
             type="audio/mp4">
     </audio>
 
     <!-- Додані аудіо для слів категорії Numbers -->
-    <audio id="one-numbers-sound" preload="none">
+    <audio id="one-numbers-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/z0v1qgpt5hlf6435ljeww/.m4a?rlkey=oagmci2hlgxlbeg5efwgi085e&st=ept7cjln&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="two-numbers-sound" preload="none">
+    <audio id="two-numbers-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/3i7mvs6zbkl548up5c9uw/.m4a?rlkey=8f8gz5b3rxgzxng21awkrn3js&st=apopbog2&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="three-numbers-sound" preload="none">
+    <audio id="three-numbers-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/5mk3tvjrpd47bvllj8w3v/.m4a?rlkey=rhq7l7rfma303t2lu9gnz9p3f&st=s8orik0e&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="four-numbers-sound" preload="none">
+    <audio id="four-numbers-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/l0h78zcml74cy3rz9f33z/.m4a?rlkey=snkrnqy4si3mq8oavap2woftd&st=oql4wkfs&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="five-numbers-sound" preload="none">
+    <audio id="five-numbers-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/gk4b7yi42wce0iyeon0y8/.m4a?rlkey=fydpwk48fvtcb45va6jshtz24&st=ujmnsfnx&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="ten-numbers-sound" preload="none">
+    <audio id="ten-numbers-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/qkq37g7jf78lmmragxdcn/.m4a?rlkey=51ryqpd3zf2m8vghc43lwjtan&st=8x0hvjbj&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="hundred-numbers-sound" preload="none">
+    <audio id="hundred-numbers-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/8eaevgcb3ep9tdiu4aj3n/.m4a?rlkey=kh3onuz4s1zb6d423mvzm28hw&st=hduk0poc&dl=1"
             type="audio/mp4">
     </audio>
-    <audio id="today-numbers-sound" preload="none">
+    <audio id="today-numbers-sound" preload="auto">
         <source
             src="https://www.dropbox.com/scl/fi/thlh1t7i2j6uxeo3g1o8y/.m4a?rlkey=mt43htxwahptre2b5t6xz3byl&st=ichnv1pi&dl=1"
             type="audio/mp4">
-    </audio>
-
-    <audio id="sister-sound" preload="none">
-        <source
-            src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%91%CE%B4%CE%B5%CF%81%CF%86%CE%AE.mp3?raw=true"
-            type="audio/mpeg">
-    </audio>
-    <audio id="brother-sound" preload="none">
-        <source
-            src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%91%CE%B4%CE%B5%CF%81%CF%86%CF%8C%CF%82.mp3?raw=true"
-            type="audio/mpeg">
-    </audio>
-    <audio id="ten-sound" preload="none">
-        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%94%CE%B5%CE%BA%CE%B1.mp3?raw=true"
-            type="audio/mpeg">
-    </audio>
-    <audio id="two-sound" preload="none">
-        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%94%CF%85%CE%BF.mp3?raw=true"
-            type="audio/mpeg">
-    </audio>
-    <audio id="hundred-sound" preload="none">
-        <source
-            src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%95%CE%BA%CE%B1%CF%84%CE%BF.mp3?raw=true"
-            type="audio/mpeg">
-    </audio>
-    <audio id="one-sound" preload="none">
-        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%95%CE%BD%CE%B1.mp3?raw=true"
-            type="audio/mpeg">
-    </audio>
-    <audio id="three-sound" preload="none">
-        <source src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%A4%CF%81%CE%AF%CE%B1.mp3?raw=true"
-            type="audio/mpeg">
-    </audio>
-    <audio id="today-sound" preload="none">
-        <source
-            src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%A3%CE%AE%CE%BC%CE%B5%CF%81%CE%B1.mp3?raw=true"
-            type="audio/mpeg">
-    </audio>
-    <audio id="four-sound" preload="none">
-        <source
-            src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%A4%CE%AD%CF%83%CF%83%CE%B5%CF%81%CE%B1.mp3?raw=true"
-            type="audio/mpeg">
-    </audio>
-    <audio id="five-sound" preload="none">
-        <source
-            src="https://github.com/KarinaR-Ch/Greekcourses/blob/main/voice/%CE%A0%CE%AD%CE%BD%CF%84%CE%B5.mp3?raw=true"
-            type="audio/mpeg">
     </audio>
 
     <script>
@@ -2103,7 +2086,7 @@
             // Scroll to top button functionality
             const scrollToTopBtn = document.getElementById('scroll-to-top');
 
-            window.addEventListener('scroll', function() {
+            window.addEventListener('scroll', function () {
                 if (window.pageYOffset > 300) {
                     scrollToTopBtn.classList.add('show');
                 } else {
@@ -2111,7 +2094,7 @@
                 }
             });
 
-            scrollToTopBtn.addEventListener('click', function() {
+            scrollToTopBtn.addEventListener('click', function () {
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
